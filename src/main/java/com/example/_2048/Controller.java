@@ -78,7 +78,6 @@ public class Controller {
 
 
     public void getRandomNumber() {
-        setFieldMap();
         if (ifGameEnd()) {
             boolean ok = true;
             while (ok) {
