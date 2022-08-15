@@ -4,42 +4,46 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="CENTER" prefHeight="257.0" prefWidth="169.0" spacing="20.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example._2048.Controller">
+<VBox alignment="CENTER" prefHeight="257.0" prefWidth="169.0" spacing="20.0" xmlns="http://javafx.com/javafx/16"
+      xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example._2048.Controller">
     <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
-   <Label fx:id="gameOver" text="GameOver" visible="false"/>
+    <Label fx:id="gameOver" text="GameOver" visible="false"/>
+    <Label fx:id="gameWinner" text="G A M E   W I N N E R" visible="false"/>
 
-    <Label fx:id="welcomeText" onMouseClicked="#start" >2048 please click on start or restart</Label>
-   <HBox fx:id="one" prefHeight="100.0" prefWidth="200.0">
-       <TextArea fx:id="oneOne" disable="true" prefHeight="80.0" prefWidth="80.0" />
-       <TextArea fx:id="oneTwo" disable="true" prefHeight="80.0" prefWidth="80.0" />
-       <TextArea fx:id="oneThree" disable="true" prefHeight="80.0" prefWidth="80.0" />
-       <TextArea fx:id="oneFour" disable="true" prefHeight="80.0" prefWidth="80.0" />
-   </HBox>
-    <HBox prefHeight="100.0" prefWidth="200.0">
-        <TextArea fx:id="twoOne" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="twoTwo" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="twoThree" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="twoFour" disable="true" prefHeight="80.0" prefWidth="80.0" />
-    </HBox>
-    <HBox prefHeight="100.0" prefWidth="200.0">
-        <TextArea fx:id="threeOne" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="threeTwo" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="threeThree" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="threeFour" disable="true" prefHeight="80.0" prefWidth="80.0" />
-    </HBox>
-    <HBox prefHeight="100.0" prefWidth="200.0">
-        <TextArea fx:id="fourOne" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="fourTwo" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="fourThree" disable="true" prefHeight="80.0" prefWidth="80.0" />
-        <TextArea fx:id="fourFour" disable="true" prefHeight="80.0" prefWidth="80.0" />
-    </HBox>
-    <Button mnemonicParsing="false" onAction="#getFieldUp" text="UP" onKeyPressed="#getCode"  />
+    <Label fx:id="welcomeText" onMouseClicked="#start">2048 please click on start or restart</Label>
+
+        <HBox fx:id="one" prefHeight="100.0" prefWidth="200.0">
+            <TextArea fx:id="oneOne" disable="true" prefHeight="80.0" prefWidth="80.0" />
+            <TextArea fx:id="oneTwo" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="oneThree" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="oneFour" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <TextArea fx:id="twoOne" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="twoTwo" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="twoThree" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="twoFour" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <TextArea fx:id="threeOne" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="threeTwo" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="threeThree" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="threeFour" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+        </HBox>
+        <HBox prefHeight="100.0" prefWidth="200.0">
+            <TextArea fx:id="fourOne" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="fourTwo" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="fourThree" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+            <TextArea fx:id="fourFour" disable="true" prefHeight="80.0" prefWidth="80.0"/>
+        </HBox>
+
+    <Button mnemonicParsing="false" onAction="#getFieldUp" text="UP" onKeyPressed="#getCode"/>
     <HBox alignment="CENTER">
-   <Button mnemonicParsing="false" onAction="#getFieldLeft" text="LEFT" onKeyPressed="#getCode" />
-   <Button mnemonicParsing="false" onAction="#getFieldRight" text="RIGHT" onKeyPressed="#getCode" />
+        <Button mnemonicParsing="false" onAction="#getFieldLeft" text="LEFT" onKeyPressed="#getCode"/>
+        <Button mnemonicParsing="false" onAction="#getFieldRight" text="RIGHT" onKeyPressed="#getCode"/>
     </HBox>
-   <Button mnemonicParsing="false" onAction="#getFieldDown" text="DOWN" onKeyPressed="#getCode" />
+    <Button mnemonicParsing="false" onAction="#getFieldDown" text="DOWN" onKeyPressed="#getCode"/>
 
 </VBox>

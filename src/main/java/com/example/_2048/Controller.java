@@ -1,12 +1,12 @@
 package com.example._2048;
 
-import javafx.event.ActionEvent;
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 
 import java.util.*;
 
@@ -46,6 +46,8 @@ public class Controller {
     private TextArea fourFour;
     @FXML
     private Label gameOver;
+    @FXML
+    private Label gameWinner;
 
     private NumberService numberService=new NumberService();
     private final String number = "2";
@@ -69,6 +71,9 @@ public class Controller {
         field.put(14, fourTwo);
         field.put(15, fourThree);
         field.put(16, fourFour);
+        if (field.values().stream().anyMatch(textArea -> textArea.getText().equals("2048"))){
+            gameWinner.setVisible(true);
+        }
     }
 
     public void restartField() {
@@ -103,10 +108,16 @@ public class Controller {
     }
 
     public void getFieldLeft() {
+        setFieldMap();
+        numberService.moveNumber(oneOne,oneTwo,oneThree,oneFour);
+        numberService.moveNumber(twoOne,twoTwo,twoThree,twoFour);
+        numberService.moveNumber(threeOne,threeTwo,threeThree,threeFour);
+        numberService.moveNumber(fourOne,fourTwo,fourThree,fourFour);
         getRandomNumber();
     }
 
     public void getFieldUp() {
+        setFieldMap();
         numberService.moveNumber(oneOne,twoOne,threeOne,fourOne);
         numberService.moveNumber(oneTwo,twoTwo,threeTwo,fourTwo);
         numberService.moveNumber(oneThree,twoThree,threeThree,fourThree);
@@ -115,10 +126,20 @@ public class Controller {
     }
 
     public void getFieldRight() {
+        setFieldMap();
+        numberService.moveNumber(oneFour,oneThree,oneTwo,oneOne);
+        numberService.moveNumber(twoFour,twoThree,twoTwo,twoOne);
+        numberService.moveNumber(threeFour,threeThree,threeTwo,threeOne);
+        numberService.moveNumber(fourFour,fourThree,fourTwo,fourOne);
         getRandomNumber();
     }
 
     public void getFieldDown() {
+        setFieldMap();
+        numberService.moveNumber(fourOne,threeOne,twoOne,oneOne);
+        numberService.moveNumber(fourTwo, threeTwo ,twoTwo,oneTwo);
+        numberService.moveNumber(fourThree ,threeThree,twoThree,oneThree);
+        numberService.moveNumber(fourFour,threeFour,twoFour,oneFour);
         getRandomNumber();
     }
 
